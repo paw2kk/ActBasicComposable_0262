@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Praktikum2Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    TataletakBoxCloumnRow(
+                    HalamanLogin(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
