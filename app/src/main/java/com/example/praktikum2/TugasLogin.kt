@@ -65,6 +65,17 @@ fun HalamanLogin(modifier: Modifier = Modifier) {
                     .background(Color.White),
                 contentAlignment = Alignment.Center
             )
+            {
+                Image(
+                    painter = logo,
+                    contentDescription = "Logo Universitas Muhammadiyah Yogyakarta",
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .scale(1.5f),
+                    contentScale = ContentScale.Fit
+                )
+            }
+
         }
     }
 }
