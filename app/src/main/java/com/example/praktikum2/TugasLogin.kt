@@ -26,5 +26,9 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun HalamanLogin(modifier: Modifier = Modifier) {
-
+    Box(
+        modifier = modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+    }
 }
