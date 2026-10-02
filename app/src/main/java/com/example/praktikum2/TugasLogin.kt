@@ -29,34 +29,41 @@ fun HalamanLogin(modifier: Modifier = Modifier) {
     val latar = painterResource(id = R.drawable.angkatsepeda)
     val logo = painterResource(id = R.drawable.logo_umy)
     val foto = painterResource(id = R.drawable.wisuda)
+
+    // Box terluar: menumpuk gambar latar (lapisan bawah) dan konten (lapisan atas)
     Box(
         modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
-    ) { Image(
-        painter = latar,
-        contentDescription = null,
-        modifier = Modifier.fillMaxSize(),
-        contentScale = ContentScale.Crop
-    )
+    ) {
+        // Lapisan 1: gambar latar memenuhi layar
+        Image(
+            painter = latar,
+            contentDescription = null,
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.Crop
+        )
+
+        // Lapisan 2: konten disusun vertikal dan rata tengah
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(top = 24.dp, bottom = 24.dp),
-            horizontalAlignment = Alignment.CenterHorizontally)
-        {
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Text(
                 text = "Login",
                 color = Color.Blue,
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold
             )
-
             Text(
                 text = "Ini adalah halaman login,",
                 color = Color.White,
                 fontSize = 14.sp
             )
+
             Spacer(modifier = Modifier.height(40.dp))
+
             // Logo dibungkus Box berbentuk lingkaran
             Box(
                 modifier = Modifier
@@ -64,8 +71,7 @@ fun HalamanLogin(modifier: Modifier = Modifier) {
                     .clip(CircleShape)
                     .background(Color.White),
                 contentAlignment = Alignment.Center
-            )
-            {
+            ) {
                 Image(
                     painter = logo,
                     contentDescription = "Logo Universitas Muhammadiyah Yogyakarta",
@@ -74,50 +80,47 @@ fun HalamanLogin(modifier: Modifier = Modifier) {
                         .scale(1.5f),
                     contentScale = ContentScale.Fit
                 )
-
-                Spacer(modifier = Modifier.height(48.dp))
-
-                Text(
-                    text = "Nama",
-                    color = Color.Red,
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Bold
-                )
-
-                Text(
-                    text = "Aufa Maha Dana",
-                    color = Color.Blue,
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = "20240140262",
-                    color = Color.Black,
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold
-                )
-
-                Spacer(modifier = Modifier.height(20.dp))
-
-                // Box berbentuk lingkaran untuk foto
-                Box(
-                    modifier = Modifier
-                        .size(260.dp)
-                        .clip(CircleShape)
-                        .background(Color(0xFFE8E8F4))
-                        .border(width = 3.dp, color = Color.White, shape = CircleShape),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Image(
-                        painter = foto,
-                        contentDescription = "Foto Bersama",
-                        modifier = Modifier.fillMaxSize(),
-                        contentScale = ContentScale.Fit
-                    )
-                }
-
             }
 
+            Spacer(modifier = Modifier.height(48.dp))
+
+            Text(
+                text = "Nama",
+                color = Color.Red,
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Bold
+            )
+            Text(
+                text = "Aufa Maha Dana",
+                color = Color.Blue,
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Bold
+            )
+            Text(
+                text = "20240140262",
+                color = Color.Black,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // Box berbentuk lingkaran untuk foto
+            Box(
+                modifier = Modifier
+                    .size(260.dp)
+                    .clip(CircleShape)
+                    .background(Color(0xFFE8E8F4))
+                    .border(width = 3.dp, color = Color.White, shape = CircleShape),
+                contentAlignment = Alignment.Center
+            ) {
+                Image(
+                    painter = foto,
+                    contentDescription = "Foto Bersama",
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Fit
+                )
+            }
         }
     }
 }
