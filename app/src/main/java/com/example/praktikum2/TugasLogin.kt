@@ -84,6 +84,12 @@ fun HalamanLogin(modifier: Modifier = Modifier) {
                     fontWeight = FontWeight.Bold
                 )
 
+                Text(
+                    text = "Aufa Maha Dana",
+                    color = Color.Blue,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold
+                )
             }
 
         }
